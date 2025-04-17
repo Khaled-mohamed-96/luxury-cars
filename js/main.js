@@ -53,3 +53,20 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
+const reveals = document.querySelectorAll(".reveal");
+
+const options = {
+  threshold: 0.1,
+};
+
+const observer = new IntersectionObserver(function (entries) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("animate");
+    }
+  });
+}, options);
+
+reveals.forEach((reveal) => {
+  observer.observe(reveal);
+});

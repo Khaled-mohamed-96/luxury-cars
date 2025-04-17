@@ -80,6 +80,38 @@ section {
   margin: auto;
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+
+
+i,
+.book-btn,
+.scrollup {
+  animation: wiggle 0.8s infinite;
+}
+
+.reveal.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-img img,
+.d-box img,
+.place-img img {
+  animation: zoomIn 1s ease forwards;
+  animation-delay: 0.7s;
+}
+
+.heading h1 {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.4s;
+}
+
 header {
   position: fixed;
   width: 100%;
@@ -88,6 +120,23 @@ header {
   z-index: 1000;
   transition: 0.5s;
 }
+
+header {
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 header.shadow {
   background: var(--bg-color);
@@ -186,6 +235,12 @@ header.shadow .navbar a::after {
   position: relative;
   display: grid;
   align-items: center;
+}
+
+.home-text {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
 }
 
 .home-img {
@@ -602,6 +657,13 @@ header.shadow .navbar a::after {
   position: relative;
   min-height: 70vh;
   width: 100%;
+
+
+}
+
+
+.object-fit video {
+  object-fit: cover;
 }
 
 .hero-img {
@@ -1289,5 +1351,56 @@ header.shadow .navbar a::after {
     align-items: flex-start;
     gap: 10px;
     flex-direction: column;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes wiggle {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(2deg);
+  }
+
+  75% {
+    transform: rotate(-2deg);
   }
 }
